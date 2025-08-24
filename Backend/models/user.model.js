@@ -10,7 +10,7 @@ const User = sequelize.define(
     password: { type: DataTypes.STRING, allowNull: false },
     name: { type: DataTypes.STRING, allowNull: false },
   },
-  { tableName: "Users" }
+  { tableName: "Users", timestamps: true }
 );
 
 module.exports = User;

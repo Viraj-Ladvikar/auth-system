@@ -16,12 +16,11 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Allow frontend to send/receive cookies
-app.use(
-  cors({
-    origin: "http://localhost:3000", // change to your frontend origin
-    credentials: true,               // <- important
-  })
-);
+// In your backend server setup
+app.use(cors({
+  origin: 'http://localhost:5173', // or your frontend URL
+  credentials: true
+}));
 app.use("/api/auth", require("./routes/auth.route.js"));
 const jwt = require("jsonwebtoken");
 
